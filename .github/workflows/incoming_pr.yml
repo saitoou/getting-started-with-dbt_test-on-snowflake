@@ -22,7 +22,7 @@ jobs:
       SNOWFLAKE_SCHEMA: ${{ vars.SNOWFLAKE_SCHEMA }}
 
       SNOWFLAKE_ROLE: ACCOUNTADMIN
-      SNOWFLAKE_WAREHOUSE: TASTY_BYTES_DBT_WM
+      SNOWFLAKE_WAREHOUSE: TASTY_BYTES_DBT_WH
 
     steps:
       # Check out repository code
