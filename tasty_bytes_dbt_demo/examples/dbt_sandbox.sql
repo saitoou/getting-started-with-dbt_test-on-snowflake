@@ -23,3 +23,34 @@ ALTER USER GitHub_Actions_Service_User
   SET NETWORK_POLICY = github_actions_policy;
 
 SHOW PARAMETERS LIKE 'NETWORK_POLICY' FOR USER github_actions_service_user;
+
+use role accountadmin;
+
+alter user github_actions_service_user
+
+show user workload identity authentication methods
+for user github_actions_service_user;
+
+
+use role accountadmin;
+
+show grants to user github_actions_service_user;
+
+grant role accountadmin
+to user github_actions_service_user;
+
+
+use role accountadmin;
+
+show warehouses like 'TASTY_BYTES_DBT_WH';
+
+use role accountadmin;
+use warehouse TASTY_BYTES_DBT_WH;
+
+select
+    current_role(),
+    current_warehouse();
+
+show warehouses like 'TASTY_BYTES_DBT_WH';
+
+describe user GITHUB_ACTIONS_SERVICE_USER;
